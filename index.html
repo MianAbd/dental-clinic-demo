@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmileCare Dental Clinic</title>
+<meta name="description" content="SmileCare Dental Clinic - Professional dental care for healthy and confident smiles.">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    color:#17324d;
+    background:#ffffff;
+    line-height:1.6;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#ffffff;
+    box-shadow:0 2px 15px rgba(0,0,0,0.08);
+}
+
+.navbar{
+    max-width:1150px;
+    margin:auto;
+    padding:18px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#087f8c;
+}
+
+.logo span{
+    color:#17324d;
+}
+
+nav a{
+    text-decoration:none;
+    color:#17324d;
+    margin-left:25px;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#087f8c;
+}
+
+.hero{
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    background:linear-gradient(90deg,rgba(4,47,66,.9),rgba(4,47,66,.35)),
+    url("https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:1150px;
+    width:100%;
+    margin:auto;
+    padding:40px 25px;
+    color:white;
+}
+
+.hero h1{
+    font-size:58px;
+    max-width:650px;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:600px;
+    font-size:19px;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 25px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    margin-right:10px;
+}
+
+.btn-primary{
+    background:#16a6b6;
+    color:white;
+}
+
+.btn-light{
+    background:white;
+    color:#17324d;
+}
+
+section{
+    padding:80px 25px;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#667788;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    padding:30px;
+    border-radius:14px;
+    background:#f5fbfc;
+    border:1px solid #e2eef0;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.icon{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:10px;
+    font-size:22px;
+}
+
+.card p{
+    color:#667788;
+}
+
+.about{
+    background:#f5fbfc;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:18px;
+}
+
+.about h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.about p{
+    color:#667788;
+    margin-bottom:18px;
+}
+
+.check{
+    margin:12px 0;
+    font-weight:600;
+}
+
+.doctors{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.doctor{
+    text-align:center;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.doctor img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.doctor-info{
+    padding:20px;
+}
+
+.doctor-info p{
+    color:#667788;
+}
+
+.why{
+    background:#f5fbfc;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.why-box{
+    text-align:center;
+    padding:25px;
+}
+
+.why-box strong{
+    display:block;
+    font-size:28px;
+    color:#087f8c;
+    margin-bottom:8px;
+}
+
+.reviews{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.review{
+    padding:30px;
+    border:1px solid #e4ecef;
+    border-radius:14px;
+}
+
+.stars{
+    color:#f5b301;
+    font-size:20px;
+    margin-bottom:15px;
+}
+
+.review p{
+    color:#667788;
+    margin-bottom:15px;
+}
+
+.appointment{
+    background:#087f8c;
+    color:white;
+}
+
+.appointment .section-title p{
+    color:#d7f4f7;
+}
+
+.form{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+}
+
+.form input,
+.form select,
+.form textarea{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    border:1px solid #d5e0e4;
+    border-radius:8px;
+    font-size:15px;
+}
+
+.form textarea{
+    height:120px;
+    resize:none;
+}
+
+.form button{
+    width:100%;
+    border:0;
+    padding:15px;
+    background:#16a6b6;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.contact{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    text-align:center;
+}
+
+.contact-box{
+    padding:30px;
+    background:#f5fbfc;
+    border-radius:14px;
+}
+
+.contact-box h3{
+    margin-bottom:10px;
+}
+
+.contact-box p{
+    color:#667788;
+}
+
+footer{
+    background:#102b40;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+}
+
+footer p{
+    color:#b9c9d5;
+}
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#25d366;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    text-decoration:none;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+@media(max-width:850px){
+    nav{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .services,
+    .doctors,
+    .reviews{
+        grid-template-columns:1fr;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .contact{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:500px){
+    .hero{
+        min-height:580px;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:60px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+        <div class="logo">Smile<span>Care</span> 🦷</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#doctors">Doctors</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Your Smile Deserves the Best Care</h1>
+
+        <p>
+            Professional dental care in a comfortable and friendly environment.
+            From routine checkups to complete smile makeovers, we're here for you.
+        </p>
+
+        <a href="#appointment" class="btn btn-primary">Book an Appointment</a>
+        <a href="#services" class="btn btn-light">Our Services</a>
+    </div>
+</section>
+
+<section id="services">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Our Dental Services</h2>
+            <p>Complete dental care for you and your family.</p>
+        </div>
+
+        <div class="services">
+
+            <div class="card">
+                <div class="icon">🦷</div>
+                <h3>General Dentistry</h3>
+                <p>Regular checkups, cleaning and preventive dental care.</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">✨</div>
+                <h3>Teeth Whitening</h3>
+                <p>Brighten your smile with professional whitening treatment.</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">😁</div>
+                <h3>Cosmetic Dentistry</h3>
+                <p>Improve the appearance of your smile with modern treatments.</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🩺</div>
+                <h3>Root Canal</h3>
+                <p>Comfortable and professional root canal treatment.</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">👶</div>
+                <h3>Kids Dentistry</h3>
+                <p>Friendly dental care designed especially for children.</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🦷</div>
+                <h3>Dental Implants</h3>
+                <p>Modern implant solutions for missing teeth.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="container about-grid">
+
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80" alt="Dental clinic">
+
+        <div>
+            <h2>Modern Dentistry With a Personal Touch</h2>
+
+            <p>
+                At SmileCare Dental Clinic, our goal is simple:
+                to provide high-quality dental care while making every patient
+                feel comfortable and respected.
+            </p>
+
+            <p>
+                Our experienced team uses modern equipment and a patient-first
+                approach to help you maintain a healthy and confident smile.
+            </p>
+
+            <div class="check">✓ Experienced dental professionals</div>
+            <div class="check">✓ Modern equipment</div>
+            <div class="check">✓ Comfortable environment</div>
+            <div class="check">✓ Personalized treatment plans</div>
+        </div>
+
+    </div>
+</section>
+
+<section id="doctors">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Meet Our Dentists</h2>
+            <p>Experienced professionals dedicated to your smile.</p>
+        </div>
+
+        <div class="doctors">
+
+            <div class="doctor">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80" alt="Dentist">
+                <div class="doctor-info">
+                    <h3>Dr. Sarah Khan</h3>
+                    <p>General & Cosmetic Dentist</p>
+                </div>
+            </div>
+
+            <div class="doctor">
+                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80" alt="Dentist">
+                <div class="doctor-info">
+                    <h3>Dr. Ahmed Malik</h3>
+                    <p>Implant & Restorative Dentist</p>
+                </div>
+            </div>
+
+            <div class="doctor">
+                <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=800&q=80" alt="Dentist">
+                <div class="doctor-info">
+                    <h3>Dr. Emily James</h3>
+                    <p>Family & Pediatric Dentist</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="why">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Why Choose SmileCare?</h2>
+            <p>Quality care focused on your comfort.</p>
+        </div>
+
+        <div class="why-grid">
+
+            <div class="why-box">
+                <strong>10+</strong>
+                Years Experience
+            </div>
+
+            <div class="why-box">
+                <strong>5,000+</strong>
+                Happy Patients
+            </div>
+
+            <div class="why-box">
+                <strong>15+</strong>
+                Dental Treatments
+            </div>
+
+            <div class="why-box">
+                <strong>24/7</strong>
+                Appointment Support
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+
+        <div class="section-title">
+            <h2>What Our Patients Say</h2>
+            <p>Realistic demo reviews for presentation purposes.</p>
+        </div>
+
+        <div class="reviews">
+
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <p>
+                    "The clinic was clean, professional and the staff were very friendly.
+                    I had a great experience."
+                </p>
+                <strong>— Ayesha R.</strong>
+            </div>
+
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <p>
+                    "Dr. Sarah explained everything clearly and made me feel comfortable
+                    throughout the treatment."
+                </p>
+                <strong>— Hamza K.</strong>
+            </div>
+
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <p>
+                    "Very professional service and a welcoming environment.
+                    Highly recommended."
+                </p>
+                <strong>— Usman A.</strong>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="appointment" id="appointment">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Book an Appointment</h2>
+            <p>Send us your details and our team will contact you.</p>
+        </div>
+
+        <form class="form" onsubmit="bookAppointment(event)">
+
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="tel" placeholder="Phone Number" required>
+
+            <input type="email" placeholder="Email Address" required>
+
+            <select required>
+                <option value="">Select a Service</option>
+                <option>General Dentistry</option>
+                <option>Teeth Whitening</option>
+                <option>Cosmetic Dentistry</option>
+                <option>Root Canal</option>
+                <option>Kids Dentistry</option>
+                <option>Dental Implants</option>
+            </select>
+
+            <textarea placeholder="Your Message"></textarea>
+
+            <button type="submit">Request Appointment</button>
+
+        </form>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>We're here to help with your dental needs.</p>
+        </div>
+
+        <div class="contact">
+
+            <div class="contact-box">
+                <h3>📍 Location</h3>
+                <p>DHA Lahore, Pakistan</p>
+            </div>
+
+            <div class="contact-box">
+                <h3>📞 Phone</h3>
+                <p>+92 300 1234567</p>
+            </div>
+
+            <div class="contact-box">
+                <h3>✉️ Email</h3>
+                <p>hello@smilecare.com</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 SmileCare Dental Clinic — Demo Website</p>
+    <p>This is a fictional demo website created for presentation purposes.</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/923001234567" target="_blank">💬</a>
+
+<script>
+function bookAppointment(event){
+    event.preventDefault();
+
+    alert("Thank you! This is a demo appointment form. The clinic will contact you soon.");
+}
+</script>
+
+</body>
+</html>
