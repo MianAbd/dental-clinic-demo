@@ -3,1074 +3,830 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#123b40">
-  <meta name="description" content="Smile Care Dental Clinic — explore dental services and request an appointment through our demo website.">
-  <title>Smile Care Dental Clinic | Your Smile, Our Care</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Smile Care Dental Clinic — modern dentistry, personalized care and comfortable dental visits.">
+  <title>Smile Care Dental Clinic | Your Smile, Our Priority</title>
 
-  <!-- Custom Smile Care favicon: no extra image file required -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23123b40'/%3E%3Cpath d='M17 17 Q10 25 19 42 Q24 55 29 41 L32 32 L35 41 Q40 55 45 42 Q54 25 47 17 Q40 10 32 17 Q24 10 17 17Z' fill='white'/%3E%3Cpath d='M24 23 Q32 17 40 23' fill='none' stroke='%237ce0c3' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
-
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='25' fill='%230b65d8'/%3E%3Ctext x='50' y='69' font-size='62' text-anchor='middle' fill='white' font-family='Arial'%3ES%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
     :root {
-      --green: #123b40;
-      --green-light: #1e6666;
-      --mint: #b8eadb;
-      --mint-soft: #edf8f4;
-      --cream: #fbfcf9;
+      --blue: #1268df;
+      --blue-dark: #0b2b57;
+      --blue-light: #eaf3ff;
+      --cyan: #35c4e8;
+      --ink: #14243a;
+      --muted: #66758a;
       --white: #fff;
-      --ink: #1b3032;
-      --muted: #647675;
-      --line: #e4ece8;
-      --shadow: 0 20px 60px rgba(18,59,64,.09);
+      --line: #e5edf6;
+      --shadow: 0 18px 50px rgba(16, 53, 100, .10);
+      --radius: 24px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-
     body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--cream);
+      font-family: "DM Sans", sans-serif;
       color: var(--ink);
-      line-height: 1.7;
+      background: #fff;
+      line-height: 1.65;
+      overflow-x: hidden;
     }
-
-    body, button, a { -webkit-tap-highlight-color: transparent; }
-    img { display: block; max-width: 100%; }
+    img { display: block; width: 100%; object-fit: cover; }
     a { color: inherit; text-decoration: none; }
-    button { font: inherit; }
-    .container { width: min(1160px, 90%); margin-inline: auto; }
-
-    .topbar {
-      background: var(--green);
-      color: #e8f5ef;
-      font-size: 12px;
-      padding: 8px 0;
-    }
-
-    .topbar-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .topbar a { color: var(--mint); font-weight: 700; }
-
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(251,252,249,.94);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(18,59,64,.08);
-    }
-
-    .nav {
-      min-height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 22px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 11px;
-      flex-shrink: 0;
-    }
-
-    .brand-icon {
-      display: grid;
-      place-items: center;
-      width: 45px;
-      height: 45px;
-      border-radius: 15px;
-      background: var(--green);
-      color: white;
-      font-size: 25px;
-    }
-
-    .brand-name {
-      display: block;
-      font: 800 21px/1.15 'Manrope', sans-serif;
-      letter-spacing: -.8px;
-      color: var(--green);
-    }
-
-    .brand-sub {
-      display: block;
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-top: 4px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 27px;
-      font-size: 13px;
-      font-weight: 600;
-      color: #526765;
-    }
-
-    .nav-links a:hover { color: var(--green-light); }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 9px;
-      border-radius: 9px;
-      padding: 13px 19px;
-      border: 1px solid transparent;
-      font-size: 13px;
-      font-weight: 700;
-      text-align: center;
-      transition: transform .2s, background .2s, box-shadow .2s;
-      cursor: pointer;
-    }
-
-    .btn:hover { transform: translateY(-2px); }
-
-    .btn-primary {
-      background: var(--green);
-      color: white;
-      box-shadow: 0 8px 22px rgba(18,59,64,.15);
-    }
-
-    .btn-primary:hover { background: var(--green-light); }
-
-    .btn-light {
-      border-color: #d9e5df;
-      background: white;
-      color: var(--green);
-    }
-
-    .btn-light:hover { border-color: var(--green-light); }
-
-    .menu-toggle {
-      display: none;
-      width: 44px;
-      height: 44px;
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      color: var(--green);
-      font-size: 23px;
-      cursor: pointer;
-    }
-
-    .hero {
-      padding: 72px 0 76px;
-      overflow: hidden;
-      background:
-        radial-gradient(ellipse at 90% 20%, rgba(184,234,219,.55), transparent 35%),
-        var(--cream);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.04fr .96fr;
-      gap: 60px;
-      align-items: center;
-    }
-
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+    h1, h2, h3, h4 { font-family: "Manrope", sans-serif; line-height: 1.2; }
+    h1 { font-size: clamp(2.65rem, 5.4vw, 4.8rem); letter-spacing: -2.8px; }
+    h2 { font-size: clamp(2rem, 3.5vw, 3.15rem); letter-spacing: -1.5px; }
+    p { color: var(--muted); }
+    .container { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+    .section { padding: 100px 0; }
+    .section-head { max-width: 680px; margin: 0 auto 48px; text-align: center; }
+    .section-head p { margin-top: 15px; font-size: 1.02rem; }
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--green-light);
-      background: var(--mint-soft);
-      border: 1px solid #d8eee5;
-      border-radius: 100px;
-      padding: 7px 12px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .7px;
-      text-transform: uppercase;
-      margin-bottom: 23px;
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 8px 13px; border-radius: 100px;
+      color: var(--blue); background: var(--blue-light);
+      font-weight: 700; font-size: .79rem; letter-spacing: .7px;
+      text-transform: uppercase; margin-bottom: 20px;
     }
-
-    .eyebrow span {
-      height: 7px;
-      width: 7px;
-      border-radius: 50%;
-      background: #46a98c;
+    .eyebrow i { font-size: .9rem; }
+    .gradient-text {
+      color: var(--blue);
+      background: linear-gradient(100deg, #1268df, #35bfe5);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-
-    h1, h2, h3 {
-      font-family: 'Manrope', sans-serif;
-      line-height: 1.18;
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 52px; padding: 14px 23px; border-radius: 12px;
+      font-weight: 700; border: 1px solid transparent;
+      transition: transform .25s, box-shadow .25s, background .25s;
     }
+    .btn:hover { transform: translateY(-3px); }
+    .btn-primary { color: white; background: var(--blue); box-shadow: 0 10px 24px #1268df38; }
+    .btn-primary:hover { background: #0757c3; box-shadow: 0 14px 28px #1268df45; }
+    .btn-outline { color: var(--blue-dark); border-color: #d8e4f4; background: white; }
+    .btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+    .topbar { background: var(--blue-dark); color: #eaf4ff; font-size: .83rem; }
+    .topbar-inner { display: flex; justify-content: space-between; gap: 15px; padding: 9px 0; }
+    .topbar span { display: inline-flex; align-items: center; gap: 8px; }
+    .topbar i { color: #70dcf5; }
 
-    h1 {
-      max-width: 650px;
-      font-size: clamp(42px, 5.2vw, 66px);
-      letter-spacing: -3px;
-      color: var(--green);
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(255,255,255,.94); backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(229,237,246,.85);
     }
-
-    .hero h1 em {
-      font-style: normal;
-      color: var(--green-light);
+    .nav { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; flex-shrink: 0; }
+    .brand-icon {
+      width: 45px; height: 45px; display: grid; place-items: center;
+      border-radius: 14px; color: white; font-size: 1.25rem;
+      background: linear-gradient(145deg, #1268df, #35c4e8);
+      box-shadow: 0 8px 20px #1268df35;
     }
+    .brand strong { display: block; font: 800 1.18rem "Manrope", sans-serif; letter-spacing: -.5px; }
+    .brand small { display: block; color: var(--muted); font-size: .69rem; letter-spacing: 1.3px; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 27px; }
+    .nav-links a:not(.btn) { font-size: .91rem; font-weight: 600; color: #40516a; transition: color .2s; }
+    .nav-links a:not(.btn):hover { color: var(--blue); }
+    .nav-toggle { display: none; width: 44px; height: 44px; border: 1px solid var(--line); background: white; border-radius: 12px; color: var(--blue-dark); font-size: 1.2rem; }
 
-    .hero-copy {
-      max-width: 510px;
-      color: var(--muted);
-      font-size: 15px;
-      margin: 22px 0 27px;
+    /* Hero */
+    .hero {
+      position: relative; isolation: isolate; overflow: hidden;
+      padding: 82px 0 88px;
+      background: radial-gradient(ellipse at 83% 25%, #d7f3ff 0, transparent 32%),
+                  radial-gradient(ellipse at 5% 90%, #e8f1ff 0, transparent 33%),
+                  linear-gradient(180deg, #fff 0%, #f7fbff 100%);
     }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 11px;
+    .hero:before {
+      content: ""; position: absolute; z-index: -1; width: 410px; height: 410px;
+      border: 1px solid #b6d9ff80; border-radius: 50%; top: -220px; right: -80px;
+      box-shadow: 0 0 0 45px #dceeff30, 0 0 0 90px #dceeff22;
     }
-
-    .hero-note {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 25px;
+    .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; align-items: center; gap: 60px; }
+    .hero-copy { position: relative; z-index: 2; }
+    .hero-copy h1 { max-width: 650px; }
+    .hero-copy > p { font-size: 1.08rem; max-width: 530px; margin: 24px 0 30px; }
+    .hero-actions { display: flex; gap: 13px; flex-wrap: wrap; }
+    .hero-points { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 29px; }
+    .hero-points span { display: flex; align-items: center; gap: 8px; color: #445771; font-size: .88rem; font-weight: 600; }
+    .hero-points i { color: var(--blue); }
+    .hero-visual { min-height: 520px; position: relative; perspective: 1000px; }
+    .hero-image-wrap {
+      position: absolute; inset: 12px 12px 25px 30px; overflow: hidden;
+      border-radius: 45% 45% 26px 26px; background: #d7e9f8;
+      box-shadow: 0 30px 70px #17487925;
+      transform: rotateY(-3deg) rotateX(1deg);
     }
-
-    .hero-note strong { color: var(--green); }
-
-    .hero-visual {
-      min-height: 460px;
-      position: relative;
+    .hero-image-wrap img { height: 100%; object-position: center; }
+    .hero-image-wrap:after { content: ""; position: absolute; inset: 40% 0 0; background: linear-gradient(transparent, #09284a66); }
+    .hero-orbit {
+      position: absolute; width: 125px; height: 125px; border: 1px solid #8dbdf1;
+      border-radius: 50%; top: -15px; right: -4px; z-index: -1;
     }
-
-    .hero-photo {
-      position: absolute;
-      inset: 0 10px 10px 32px;
-      overflow: hidden;
-      border-radius: 48% 48% 22px 22px;
-      background: #d9ece5;
-    }
-
-    .hero-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .photo-overlay {
-      position: absolute;
-      inset: 45% 0 0;
-      background: linear-gradient(transparent, rgba(11,45,46,.43));
-      pointer-events: none;
-    }
-
-    .image-caption {
-      position: absolute;
-      bottom: 32px;
-      left: 54px;
-      color: white;
-      font-size: 12px;
-      font-weight: 600;
-    }
-
     .floating-card {
-      position: absolute;
-      z-index: 2;
-      background: white;
-      padding: 17px 19px;
-      border: 1px solid #e5eee9;
-      border-radius: 15px;
-      box-shadow: var(--shadow);
+      position: absolute; z-index: 3; display: flex; align-items: center; gap: 13px;
+      background: white; border: 1px solid #e7eff8; border-radius: 17px;
+      padding: 15px 18px; box-shadow: 0 17px 45px #0b2b571c;
+      animation: float 5s ease-in-out infinite;
     }
+    .floating-card .float-icon { width: 45px; height: 45px; border-radius: 13px; display: grid; place-items: center; background: var(--blue-light); color: var(--blue); font-size: 1.15rem; }
+    .floating-card strong { display: block; font-size: .92rem; }
+    .floating-card small { display: block; color: var(--muted); font-size: .77rem; }
+    .float-one { left: -16px; bottom: 85px; }
+    .float-two { right: -12px; top: 85px; animation-delay: -2s; }
+    .float-two .float-icon { background: #e7fbf3; color: #129d72; }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
 
-    .floating-card small {
-      display: block;
-      color: var(--muted);
-      font-size: 11px;
-    }
+    .trust-strip { padding: 25px 0; background: white; border-bottom: 1px solid var(--line); }
+    .trust-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 22px; }
+    .trust-item { display: flex; align-items: center; justify-content: center; gap: 12px; }
+    .trust-item i { color: var(--blue); font-size: 1.35rem; }
+    .trust-item strong { display: block; font-size: .9rem; }
+    .trust-item small { display: block; color: var(--muted); font-size: .76rem; }
 
-    .floating-card strong {
-      display: block;
-      color: var(--green);
-      font: 800 15px 'Manrope', sans-serif;
-      margin-top: 4px;
-    }
-
-    .card-top { top: 45px; left: 0; }
-    .card-bottom { right: -5px; bottom: 48px; }
-
-    .mini-icon {
-      display: inline-grid;
-      place-items: center;
-      width: 31px;
-      height: 31px;
-      border-radius: 10px;
-      background: var(--mint-soft);
-      margin-right: 7px;
-      vertical-align: middle;
-    }
-
-    .trust-strip {
-      background: white;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      padding: 24px 0;
-      gap: 25px;
-    }
-
-    .trust-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-    }
-
-    .trust-symbol {
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      height: 43px;
-      width: 43px;
-      border-radius: 13px;
-      background: var(--mint-soft);
-      font-size: 20px;
-    }
-
-    .trust-item strong {
-      display: block;
-      color: var(--green);
-      font: 700 13px 'Manrope', sans-serif;
-    }
-
-    .trust-item span:last-child {
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    section.content-section { padding: 92px 0; }
-
-    .section-heading {
-      max-width: 650px;
-      margin-bottom: 39px;
-    }
-
-    .section-label {
-      color: var(--green-light);
-      font-size: 11px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 13px;
-    }
-
-    h2 {
-      color: var(--green);
-      font-size: clamp(31px, 4vw, 45px);
-      letter-spacing: -1.8px;
-    }
-
-    .section-description {
-      color: var(--muted);
-      font-size: 14px;
-      margin-top: 14px;
-      max-width: 590px;
-    }
-
-    .services { background: white; }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
+    /* Services */
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
     .service-card {
-      border: 1px solid var(--line);
-      background: var(--cream);
-      border-radius: 16px;
-      padding: 27px;
-      transition: transform .25s, box-shadow .25s, border-color .25s;
+      padding: 30px 27px; border: 1px solid var(--line); border-radius: 20px;
+      background: white; transition: transform .3s, box-shadow .3s, border-color .3s;
     }
-
-    .service-card:hover {
-      transform: translateY(-4px);
-      border-color: #b8d9cd;
-      box-shadow: var(--shadow);
-    }
-
+    .service-card:hover { transform: translateY(-7px); border-color: #b5d5ff; box-shadow: var(--shadow); }
     .service-icon {
-      display: grid;
-      place-items: center;
-      width: 51px;
-      height: 51px;
-      border-radius: 15px;
-      background: var(--mint-soft);
-      font-size: 24px;
-      margin-bottom: 22px;
+      width: 58px; height: 58px; border-radius: 17px; display: grid; place-items: center;
+      color: var(--blue); background: linear-gradient(135deg, #eaf3ff, #f2fbff);
+      font-size: 1.45rem; margin-bottom: 22px;
     }
+    .service-card h3 { font-size: 1.12rem; margin-bottom: 11px; }
+    .service-card p { font-size: .91rem; }
+    .service-link { display: inline-flex; gap: 8px; align-items: center; margin-top: 18px; color: var(--blue); font-weight: 700; font-size: .87rem; }
+    .service-link i { transition: transform .2s; }
+    .service-link:hover i { transform: translateX(4px); }
 
-    .service-card h3 {
-      font-size: 17px;
-      color: var(--green);
-      margin-bottom: 10px;
+    /* About */
+    .about { background: #f5f9ff; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 75px; align-items: center; }
+    .about-visual { position: relative; padding: 0 35px 35px 0; }
+    .about-main-img { height: 490px; border-radius: 24px; box-shadow: var(--shadow); }
+    .about-small-img {
+      position: absolute; width: 45%; height: 190px; right: 0; bottom: 0;
+      border: 8px solid #f5f9ff; border-radius: 22px; box-shadow: 0 15px 35px #0b2b571c;
     }
-
-    .service-card p {
-      color: var(--muted);
-      font-size: 13px;
-      min-height: 65px;
+    .about-badge {
+      position: absolute; left: -15px; top: 35px; padding: 14px 18px;
+      border-radius: 14px; background: white; box-shadow: var(--shadow);
+      display: flex; gap: 10px; align-items: center;
     }
+    .about-badge i { color: var(--blue); font-size: 1.5rem; }
+    .about-badge strong { font-size: .9rem; display: block; }
+    .about-badge small { font-size: .75rem; color: var(--muted); }
+    .about-copy h2 { margin-bottom: 18px; }
+    .about-copy > p { margin-bottom: 24px; }
+    .feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 26px 0 30px; }
+    .feature { display: flex; align-items: flex-start; gap: 11px; }
+    .feature i { color: var(--blue); margin-top: 4px; }
+    .feature strong { display: block; font-size: .92rem; }
+    .feature small { display: block; color: var(--muted); font-size: .82rem; margin-top: 3px; }
 
-    .service-link {
-      display: inline-block;
-      color: var(--green-light);
-      font-weight: 700;
-      font-size: 12px;
-      margin-top: 17px;
+    /* Doctors */
+    .doctors-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .doctor-card { overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: white; transition: transform .3s, box-shadow .3s; }
+    .doctor-card:hover { transform: translateY(-7px); box-shadow: var(--shadow); }
+    .doctor-photo { height: 310px; position: relative; overflow: hidden; background: #eaf3ff; }
+    .doctor-photo img { height: 100%; transition: transform .5s; }
+    .doctor-card:hover .doctor-photo img { transform: scale(1.05); }
+    .doctor-content { padding: 24px; }
+    .doctor-content h3 { font-size: 1.15rem; }
+    .doctor-role { color: var(--blue); font-weight: 700; font-size: .86rem; margin: 7px 0 12px; }
+    .doctor-content p { font-size: .88rem; }
+    .doctor-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
+    .doctor-tags span { padding: 5px 9px; border-radius: 8px; background: #f1f6fd; color: #51647d; font-size: .74rem; }
+
+    /* Clinic gallery */
+    .gallery { background: var(--blue-dark); color: white; overflow: hidden; }
+    .gallery .section-head p { color: #b9cce3; }
+    .gallery .eyebrow { background: #183e70; color: #80dafa; }
+    .gallery-grid { display: grid; grid-template-columns: 1.25fr .85fr .85fr; gap: 20px; perspective: 1200px; }
+    .gallery-card {
+      position: relative; height: 350px; overflow: hidden; border-radius: 20px;
+      background: #143c68; box-shadow: 0 20px 50px #0003;
+      transition: transform .35s, box-shadow .35s;
     }
+    .gallery-card:first-child { height: 400px; }
+    .gallery-card:hover { transform: translateY(-7px) rotateX(1deg); box-shadow: 0 30px 60px #0005; }
+    .gallery-card img { height: 100%; transition: transform .55s; }
+    .gallery-card:hover img { transform: scale(1.06); }
+    .gallery-card:after { content: ""; position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, #051b35e8); }
+    .gallery-caption { position: absolute; z-index: 2; bottom: 22px; left: 22px; right: 22px; }
+    .gallery-caption h3 { font-size: 1.08rem; }
+    .gallery-caption p { color: #d0deef; font-size: .83rem; margin-top: 5px; }
 
-    .why-grid {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 65px;
-      align-items: center;
-    }
+    /* Testimonials */
+    .review-note { margin-top: 16px; font-size: .8rem !important; color: #7a8798 !important; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .review-card { padding: 28px; border: 1px solid var(--line); border-radius: 20px; background: white; }
+    .review-stars { color: #f6ad2e; letter-spacing: 3px; font-size: 1rem; }
+    .review-card blockquote { color: #4d5e73; font-size: .94rem; margin: 17px 0 23px; }
+    .review-person { display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--line); padding-top: 18px; }
+    .review-avatar { width: 43px; height: 43px; border-radius: 50%; display: grid; place-items: center; color: var(--blue); background: var(--blue-light); font-weight: 800; }
+    .review-person strong { display: block; font-size: .9rem; }
+    .review-person small { color: var(--muted); font-size: .77rem; }
 
-    .why-image {
-      min-height: 430px;
-      overflow: hidden;
-      border-radius: 20px;
-      background: var(--mint-soft);
-    }
-
-    .why-image img {
-      width: 100%;
-      height: 100%;
-      min-height: 430px;
-      object-fit: cover;
-    }
-
-    .benefits {
-      display: grid;
-      gap: 22px;
-      margin-top: 30px;
-    }
-
-    .benefit {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-    }
-
-    .check {
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      height: 30px;
-      width: 30px;
-      border-radius: 50%;
-      background: var(--mint-soft);
-      color: var(--green-light);
-      font-weight: 800;
-    }
-
-    .benefit h3 { color: var(--green); font-size: 15px; }
-    .benefit p { color: var(--muted); font-size: 13px; margin-top: 5px; }
-
-    .appointment { background: var(--mint-soft); }
-
-    .appointment-grid {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 55px;
-      align-items: start;
-    }
-
-    .appointment-copy { padding-top: 18px; }
-    .appointment-copy p { color: var(--muted); font-size: 14px; margin-top: 17px; }
-
-    .contact-details { display: grid; gap: 14px; margin-top: 25px; }
-    .contact-row { display: flex; gap: 12px; align-items: center; }
-    .contact-row .trust-symbol { background: white; }
-    .contact-row strong { display: block; font-size: 13px; color: var(--green); }
-    .contact-row small { color: var(--muted); font-size: 12px; }
-
-    .booking-card {
-      padding: 30px;
-      background: white;
-      border: 1px solid #dcebe3;
-      border-radius: 18px;
-      box-shadow: 0 15px 45px rgba(18,59,64,.06);
-    }
-
-    .booking-card h3 {
-      color: var(--green);
-      font-size: 22px;
-    }
-
-    .booking-card > p {
-      color: var(--muted);
-      font-size: 12px;
-      margin: 8px 0 23px;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-
-    .field { display: grid; gap: 7px; }
-    .field.full { grid-column: 1 / -1; }
-
-    .field label {
-      font-size: 12px;
-      color: var(--green);
-      font-weight: 700;
-    }
-
+    /* Appointment */
+    .appointment { background: linear-gradient(180deg, #f4f9ff, #fff); }
+    .appointment-box { display: grid; grid-template-columns: .82fr 1.18fr; overflow: hidden; border-radius: 28px; background: white; box-shadow: 0 25px 80px #0b2b5714; border: 1px solid var(--line); }
+    .appointment-side { padding: 45px; color: white; background: linear-gradient(145deg, #0c3265, #1268df); position: relative; overflow: hidden; }
+    .appointment-side:after { content: ""; position: absolute; width: 300px; height: 300px; border: 1px solid #ffffff24; border-radius: 50%; right: -130px; bottom: -100px; box-shadow: 0 0 0 35px #ffffff0b, 0 0 0 70px #ffffff08; }
+    .appointment-side h2 { font-size: 2.1rem; margin: 15px 0; }
+    .appointment-side p { color: #d1e2f8; }
+    .contact-list { position: relative; z-index: 1; display: grid; gap: 22px; margin-top: 35px; }
+    .contact-item { display: flex; gap: 14px; align-items: flex-start; }
+    .contact-item i { width: 42px; height: 42px; display: grid; place-items: center; background: #ffffff18; border-radius: 12px; color: #9fe9ff; }
+    .contact-item strong { display: block; font-size: .9rem; }
+    .contact-item span { display: block; font-size: .83rem; color: #d1e2f8; }
+    .appointment-form { padding: 45px; }
+    .appointment-form h3 { font-size: 1.45rem; margin-bottom: 8px; }
+    .appointment-form > p { font-size: .9rem; margin-bottom: 26px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+    .field { display: flex; flex-direction: column; gap: 7px; }
+    .field.full { grid-column: 1/-1; }
+    .field label { font-size: .83rem; font-weight: 700; color: #35465e; }
     .field input, .field select, .field textarea {
-      width: 100%;
-      min-width: 0;
-      padding: 12px;
-      border: 1px solid #dce6e0;
-      border-radius: 9px;
-      background: #fcfdfb;
-      color: var(--ink);
-      font: 13px 'DM Sans', sans-serif;
-      outline: none;
+      width: 100%; min-height: 49px; padding: 12px 14px; border: 1px solid #dce6f2;
+      border-radius: 10px; outline: none; color: var(--ink); background: #fbfdff;
+      transition: border .2s, box-shadow .2s;
     }
+    .field textarea { min-height: 105px; resize: vertical; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px #1268df16; }
+    .form-submit { width: 100%; margin-top: 20px; border: 0; }
+    .form-hint { font-size: .78rem; margin-top: 12px; }
 
-    .field input:focus, .field select:focus, .field textarea:focus {
-      border-color: var(--green-light);
-      box-shadow: 0 0 0 3px rgba(30,102,102,.09);
-    }
-
-    .field textarea { resize: vertical; min-height: 90px; }
-    .booking-card .btn { width: 100%; margin-top: 18px; }
-
-    .form-note {
-      color: var(--muted);
-      font-size: 10px;
-      margin-top: 12px;
-    }
-
-    .footer {
-      background: #0f3034;
-      color: #e8f5ef;
-      padding: 48px 0 20px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 35px;
-      padding-bottom: 34px;
-    }
-
-    .footer .brand-name { color: white; }
-    .footer .brand-sub { color: #b4cbc3; }
-    .footer-description {
-      max-width: 430px;
-      color: #b4cbc3;
-      font-size: 13px;
-      margin-top: 17px;
-    }
-
-    .footer h3 { font-size: 14px; margin-bottom: 14px; }
-    .footer-links { display: grid; gap: 9px; color: #c2d7d0; font-size: 12px; }
-    .footer-links a:hover { color: white; }
-
-    .footer-bottom {
-      border-top: 1px solid #ffffff20;
-      padding-top: 17px;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-      color: #b4cbc3;
-      font-size: 11px;
-    }
-
+    /* Footer */
+    footer { background: #081f3d; color: white; padding: 65px 0 22px; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr .8fr .8fr 1fr; gap: 38px; padding-bottom: 42px; }
+    footer .brand strong { color: white; }
+    footer .brand small { color: #9eb6d1; }
+    .footer-about p { color: #a9bdd4; font-size: .9rem; margin-top: 20px; max-width: 290px; }
+    .footer-col h4 { font-size: .95rem; margin-bottom: 19px; }
+    .footer-col a, .footer-col p { display: block; color: #a9bdd4; font-size: .86rem; margin: 11px 0; transition: color .2s; }
+    .footer-col a:hover { color: white; }
+    .socials { display: flex; gap: 10px; margin-top: 20px; }
+    .socials a { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 11px; background: #ffffff12; color: white; margin: 0; }
+    .socials a:hover { background: var(--blue); }
+    .footer-bottom { padding-top: 22px; border-top: 1px solid #ffffff1b; display: flex; justify-content: space-between; gap: 15px; color: #8fa8c4; font-size: .8rem; }
     .whatsapp-float {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 15;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border-radius: 100px;
-      background: #1c795b;
-      color: white;
-      padding: 12px 17px;
-      font-size: 12px;
-      font-weight: 700;
-      box-shadow: 0 8px 24px #123b4030;
+      position: fixed; z-index: 900; right: 22px; bottom: 22px; width: 58px; height: 58px;
+      display: grid; place-items: center; border-radius: 50%; background: #20c76a; color: white;
+      box-shadow: 0 10px 30px #20c76a55; font-size: 1.8rem; transition: transform .2s;
     }
+    .whatsapp-float:hover { transform: translateY(-4px) scale(1.04); }
+    .demo-banner { background: #fff8e7; border-bottom: 1px solid #f5dfaa; color: #72531a; text-align: center; padding: 9px 15px; font-size: .79rem; }
 
-    .whatsapp-float:hover { background: #145f47; }
-
-    @media (max-width: 900px) {
-      .nav-links { gap: 15px; }
-      .nav > .btn { display: none; }
+    @media (max-width: 1000px) {
+      .nav-links { gap: 16px; }
       .hero-grid { gap: 30px; }
-      .hero-visual { min-height: 390px; }
-      .why-grid, .appointment-grid { gap: 32px; }
-      .service-card { padding: 21px; }
+      .hero-visual { min-height: 450px; }
+      .trust-grid { grid-template-columns: repeat(2,1fr); }
+      .about-grid { gap: 40px; }
+      .footer-grid { grid-template-columns: 1.2fr 1fr 1fr; }
+      .footer-about { grid-column: 1/-1; }
     }
-
-    @media (max-width: 700px) {
-      .container { width: min(100% - 34px, 540px); }
-      .topbar-inner { justify-content: center; text-align: center; }
-      .topbar-inner > span:first-child { display: none; }
+    @media (max-width: 760px) {
+      .container { width: min(100% - 30px, 560px); }
+      .section { padding: 72px 0; }
+      .topbar-inner { justify-content: center; }
+      .topbar-inner span:last-child { display: none; }
       .nav { min-height: 72px; }
-      .brand-icon { width: 40px; height: 40px; }
-      .brand-name { font-size: 19px; }
-      .menu-toggle { display: block; }
+      .nav-toggle { display: grid; place-items: center; }
       .nav-links {
-        display: none;
-        position: absolute;
-        top: 71px;
-        left: 0;
-        right: 0;
-        padding: 16px 5%;
-        background: var(--cream);
-        border-bottom: 1px solid var(--line);
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
+        display: none; position: absolute; top: 71px; left: 0; right: 0;
+        padding: 20px 22px 25px; background: white; border-bottom: 1px solid var(--line);
+        box-shadow: 0 20px 30px #0b2b5710; align-items: stretch; gap: 0;
       }
-      .nav-links.open { display: flex; }
-      .nav-links a { padding: 12px 0; }
-      .hero { padding: 52px 0 48px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 30px; }
-      h1 { font-size: clamp(40px, 11vw, 57px); letter-spacing: -2px; }
-      .hero-copy { font-size: 14px; }
-      .hero-visual { min-height: 350px; margin: 0 3px; }
-      .hero-photo { inset: 0 10px 10px 22px; }
-      .card-top { top: 26px; }
-      .card-bottom { right: -4px; bottom: 27px; }
-      .floating-card { padding: 13px; }
-      .image-caption { left: 40px; bottom: 26px; }
-      .trust-grid { grid-template-columns: 1fr; gap: 17px; padding: 23px 0; }
+      .nav-links.open { display: flex; flex-direction: column; }
+      .nav-links a:not(.btn) { padding: 12px 0; border-bottom: 1px solid #edf2f8; }
+      .nav-links .btn { margin-top: 15px; }
+      .hero { padding: 58px 0 60px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-copy { text-align: center; }
+      .hero-copy h1 { letter-spacing: -1.7px; }
+      .hero-copy > p { margin-inline: auto; font-size: 1rem; }
+      .hero-actions, .hero-points { justify-content: center; }
+      .hero-visual { min-height: 430px; max-width: 500px; width: 100%; margin: auto; }
+      .hero-image-wrap { inset: 10px 15px 15px; }
+      .float-one { left: -2px; bottom: 55px; }
+      .float-two { right: -2px; top: 60px; }
+      .trust-grid { gap: 22px 10px; }
       .trust-item { justify-content: flex-start; }
-      section.content-section { padding: 66px 0; }
-      .service-grid { grid-template-columns: 1fr; }
-      .service-card p { min-height: 0; }
-      .why-grid, .appointment-grid { grid-template-columns: 1fr; }
-      .why-image, .why-image img { min-height: 300px; max-height: 390px; }
+      .services-grid, .doctors-grid, .reviews-grid { grid-template-columns: 1fr 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-visual { max-width: 530px; width: 100%; margin: auto; }
+      .about-main-img { height: 420px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-card, .gallery-card:first-child { height: 300px; }
+      .gallery-card:first-child { grid-column: 1/-1; }
+      .appointment-box { grid-template-columns: 1fr; }
+      .appointment-side, .appointment-form { padding: 32px 25px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+      .footer-about { grid-column: 1/-1; }
+    }
+    @media (max-width: 480px) {
+      h1 { font-size: 2.55rem; }
+      h2 { letter-spacing: -1px; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+      .hero-visual { min-height: 350px; }
+      .floating-card { padding: 10px 12px; gap: 9px; }
+      .floating-card .float-icon { width: 36px; height: 36px; }
+      .floating-card strong { font-size: .79rem; }
+      .floating-card small { font-size: .68rem; }
+      .float-one { bottom: 35px; }
+      .float-two { top: 35px; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+      .trust-item { gap: 8px; }
+      .trust-item i { font-size: 1.1rem; }
+      .trust-item strong { font-size: .79rem; }
+      .trust-item small { font-size: .69rem; }
+      .services-grid, .doctors-grid, .reviews-grid { grid-template-columns: 1fr; }
+      .service-card { padding: 25px; }
+      .doctor-photo { height: 340px; }
+      .about-main-img { height: 350px; }
+      .about-small-img { height: 140px; }
+      .feature-list { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-card, .gallery-card:first-child { grid-column: auto; height: 310px; }
       .form-grid { grid-template-columns: 1fr; }
       .field.full { grid-column: auto; }
-      .booking-card { padding: 23px 18px; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .whatsapp-float { right: 13px; bottom: 13px; padding: 11px 14px; }
+      .appointment-side, .appointment-form { padding: 28px 20px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 25px 18px; }
+      .footer-about { grid-column: 1/-1; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .whatsapp-float { width: 53px; height: 53px; right: 15px; bottom: 15px; }
     }
-
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        scroll-behavior: auto !important;
-        transition: none !important;
-      }
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
     }
   </style>
 </head>
 
 <body>
+  <div class="demo-banner">
+    <i class="fa-solid fa-circle-info"></i>
+    Website concept demo — clinic details, doctors and testimonials must be verified before real use.
+  </div>
+
   <div class="topbar">
     <div class="container topbar-inner">
-      <span>A brighter smile starts with a conversation.</span>
-      <span>Have a question? <a href="#appointment">Request an appointment ↗</a></span>
+      <span><i class="fa-regular fa-clock"></i> Mon – Sat: 9:00 AM – 8:00 PM <small>(sample hours)</small></span>
+      <span><i class="fa-solid fa-location-dot"></i> Your clinic address goes here</span>
     </div>
   </div>
 
-  <header class="header">
+  <header>
     <div class="container nav">
-      <a class="brand" href="#home" aria-label="Smile Care home">
-        <span class="brand-icon" aria-hidden="true">☼</span>
-        <span>
-          <span class="brand-name">Smile Care</span>
-          <span class="brand-sub">Dental Clinic</span>
-        </span>
+      <a href="#home" class="brand" aria-label="Smile Care home">
+        <span class="brand-icon"><i class="fa-solid fa-tooth"></i></span>
+        <span><strong>Smile Care</strong><small>Dental Clinic</small></span>
       </a>
 
-      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#services">Our Services</a>
-        <a href="#about">Why Smile Care</a>
-        <a href="#appointment">Contact</a>
-      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
 
-      <a class="btn btn-primary" href="#appointment">Book a Visit ↗</a>
-      <button class="menu-toggle" id="menuToggle" type="button"
-        aria-label="Toggle navigation" aria-expanded="false"
-        aria-controls="navLinks">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#services">Treatments</a>
+        <a href="#about">About Us</a>
+        <a href="#doctors">Our Doctors</a>
+        <a href="#reviews">Testimonials</a>
+        <a href="#contact" class="btn btn-primary">Book Appointment <i class="fa-solid fa-arrow-right"></i></a>
+      </nav>
     </div>
   </header>
 
   <main>
     <section class="hero" id="home">
       <div class="container hero-grid">
-        <div>
-          <div class="eyebrow"><span></span> Thoughtful dental care</div>
-          <h1>A healthier smile.<br>A more confident <em>you.</em></h1>
-          <p class="hero-copy">
-            Your smile deserves thoughtful care. Discover a welcoming dental
-            experience focused on your comfort, clear communication and
-            helping you make informed decisions about your oral health.
-          </p>
+        <div class="hero-copy">
+          <span class="eyebrow"><i class="fa-solid fa-sparkles"></i> Your smile deserves the best</span>
+          <h1>A healthier smile. A <span class="gradient-text">happier you.</span></h1>
+          <p>Discover comfortable, personalized dental care in a welcoming environment. From routine checkups to smile transformations, your oral health matters to us.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#appointment">Request an Appointment ↗</a>
-            <a class="btn btn-light" href="#services">Explore Our Services</a>
+            <a href="#contact" class="btn btn-primary">Book an Appointment <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#services" class="btn btn-outline"><i class="fa-solid fa-tooth"></i> Explore Treatments</a>
           </div>
-          <div class="hero-note">
-            <span class="mini-icon">♡</span>
-            <span><strong>Your comfort matters.</strong> Care starts with listening.</span>
+          <div class="hero-points">
+            <span><i class="fa-solid fa-circle-check"></i> Personalized care</span>
+            <span><i class="fa-solid fa-circle-check"></i> Modern clinic concept</span>
+            <span><i class="fa-solid fa-circle-check"></i> Patient-first approach</span>
           </div>
         </div>
 
         <div class="hero-visual">
-          <div class="hero-photo">
-            <img
-              src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1100&q=85"
-              alt="Dental professional providing care in a modern dental clinic"
-              fetchpriority="high">
-            <div class="photo-overlay"></div>
+          <div class="hero-orbit"></div>
+          <div class="hero-image-wrap">
+            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1100&q=85" alt="Modern dental clinic interior" fetchpriority="high">
           </div>
-          <div class="floating-card card-top">
-            <span class="mini-icon">✦</span>
-            <small>A patient-first approach</small>
-            <strong>Care with compassion</strong>
+          <div class="floating-card float-one">
+            <span class="float-icon"><i class="fa-solid fa-calendar-check"></i></span>
+            <span><strong>Easy appointments</strong><small>Plan your visit with ease</small></span>
           </div>
-          <div class="floating-card card-bottom">
-            <small>Our approach</small>
-            <strong>Comfort · Clarity · Care</strong>
+          <div class="floating-card float-two">
+            <span class="float-icon"><i class="fa-solid fa-shield-heart"></i></span>
+            <span><strong>Care that feels personal</strong><small>Your comfort comes first</small></span>
           </div>
-          <div class="image-caption">A welcoming approach to dental care</div>
         </div>
       </div>
     </section>
 
-    <div class="trust-strip">
+    <section class="trust-strip" aria-label="Our approach">
       <div class="container trust-grid">
-        <div class="trust-item">
-          <span class="trust-symbol">♡</span>
-          <span><strong>Patient-first care</strong><span>We listen to your concerns</span></span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-symbol">✧</span>
-          <span><strong>Clear communication</strong><span>Understand your care options</span></span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-symbol">⌂</span>
-          <span><strong>Family-friendly approach</strong><span>A welcoming dental experience</span></span>
-        </div>
+        <div class="trust-item"><i class="fa-solid fa-user-doctor"></i><span><strong>Personalized Care</strong><small>Care suited to your needs</small></span></div>
+        <div class="trust-item"><i class="fa-solid fa-tooth"></i><span><strong>Complete Treatments</strong><small>Care for every smile</small></span></div>
+        <div class="trust-item"><i class="fa-solid fa-heart"></i><span><strong>Comfort First</strong><small>A welcoming experience</small></span></div>
+        <div class="trust-item"><i class="fa-solid fa-calendar-check"></i><span><strong>Easy Booking</strong><small>Request a convenient time</small></span></div>
       </div>
-    </div>
+    </section>
 
-    <section class="content-section services" id="services">
+    <section class="section" id="services">
       <div class="container">
-        <div class="section-heading">
-          <div class="section-label">Our services</div>
-          <h2>Care for every <span style="color:#388477">smile.</span></h2>
-          <p class="section-description">
-            From routine check-ups to restorative and cosmetic options,
-            explore dental services you can discuss with your dental professional.
-          </p>
+        <div class="section-head">
+          <span class="eyebrow"><i class="fa-solid fa-tooth"></i> Our treatments</span>
+          <h2>Complete care for your <span class="gradient-text">perfect smile</span></h2>
+          <p>Explore common dental treatments. A qualified dentist can recommend the right option after examining your teeth and gums.</p>
         </div>
 
-        <div class="service-grid">
+        <div class="services-grid">
           <article class="service-card">
-            <div class="service-icon">✧</div>
+            <div class="service-icon"><i class="fa-solid fa-teeth"></i></div>
             <h3>General Dentistry</h3>
-            <p>Routine examinations, preventive care and advice to help you maintain good oral health.</p>
-            <a class="service-link" href="#appointment">Ask about this service ↗</a>
+            <p>Routine checkups, preventive care and treatment planning to help maintain good oral health.</p>
+            <a href="#contact" class="service-link">Ask about treatment <i class="fa-solid fa-arrow-right"></i></a>
           </article>
-
           <article class="service-card">
-            <div class="service-icon">☼</div>
+            <div class="service-icon"><i class="fa-solid fa-sparkles"></i></div>
             <h3>Teeth Whitening</h3>
-            <p>Discuss professional whitening options and whether they are suitable for your smile.</p>
-            <a class="service-link" href="#appointment">Ask about this service ↗</a>
+            <p>Discuss suitable whitening options with a dental professional for a brighter-looking smile.</p>
+            <a href="#contact" class="service-link">Ask about treatment <i class="fa-solid fa-arrow-right"></i></a>
           </article>
-
           <article class="service-card">
-            <div class="service-icon">◇</div>
+            <div class="service-icon"><i class="fa-solid fa-teeth-open"></i></div>
             <h3>Braces & Alignment</h3>
-            <p>Learn about options for improving tooth alignment and your bite.</p>
-            <a class="service-link" href="#appointment">Ask about this service ↗</a>
+            <p>Explore orthodontic options designed to improve tooth alignment and your bite.</p>
+            <a href="#contact" class="service-link">Ask about treatment <i class="fa-solid fa-arrow-right"></i></a>
           </article>
-
           <article class="service-card">
-            <div class="service-icon">✚</div>
+            <div class="service-icon"><i class="fa-solid fa-shield-heart"></i></div>
             <h3>Root Canal Treatment</h3>
-            <p>Evaluation and treatment options for teeth affected by infection or damage.</p>
-            <a class="service-link" href="#appointment">Ask about this service ↗</a>
+            <p>Assessment and treatment options for teeth affected by infection or deep decay.</p>
+            <a href="#contact" class="service-link">Ask about treatment <i class="fa-solid fa-arrow-right"></i></a>
           </article>
-
           <article class="service-card">
-            <div class="service-icon">♧</div>
+            <div class="service-icon"><i class="fa-solid fa-teeth"></i></div>
             <h3>Dental Implants</h3>
-            <p>Discuss tooth replacement options and whether implants may be appropriate for you.</p>
-            <a class="service-link" href="#appointment">Ask about this service ↗</a>
+            <p>Learn about tooth-replacement options and whether implants may be suitable for you.</p>
+            <a href="#contact" class="service-link">Ask about treatment <i class="fa-solid fa-arrow-right"></i></a>
           </article>
-
           <article class="service-card">
-            <div class="service-icon">❋</div>
+            <div class="service-icon"><i class="fa-solid fa-face-smile"></i></div>
             <h3>Cosmetic Dentistry</h3>
-            <p>Explore treatment options designed to improve the appearance of your smile.</p>
-            <a class="service-link" href="#appointment">Ask about this service ↗</a>
+            <p>Discuss options to improve the appearance of your smile based on your individual needs.</p>
+            <a href="#contact" class="service-link">Ask about treatment <i class="fa-solid fa-arrow-right"></i></a>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="content-section" id="about">
-      <div class="container why-grid">
-        <div class="why-image">
-          <img
-            src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1000&q=85"
-            alt="Dental care equipment in a clinical setting"
-            loading="lazy">
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div class="about-visual">
+          <img class="about-main-img" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1000&q=85" alt="Dentist providing a dental consultation" loading="lazy">
+          <img class="about-small-img" src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=600&q=85" alt="Dental care equipment" loading="lazy">
+          <div class="about-badge">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <span><strong>Your comfort matters</strong><small>Thoughtful dental care</small></span>
+          </div>
         </div>
 
-        <div>
-          <div class="section-label">The Smile Care approach</div>
-          <h2>Dental care that puts <span style="color:#388477">you first.</span></h2>
-          <p class="section-description">
-            Choosing dental care should feel straightforward. Our demo
-            presents a welcoming, patient-focused experience where visitors
-            can learn about services and ask questions before a visit.
-          </p>
-
-          <div class="benefits">
-            <div class="benefit">
-              <span class="check">✓</span>
-              <div>
-                <h3>Comfortable communication</h3>
-                <p>Space to share concerns and discuss available treatment options.</p>
-              </div>
-            </div>
-            <div class="benefit">
-              <span class="check">✓</span>
-              <div>
-                <h3>Clear next steps</h3>
-                <p>Find service information and request an appointment without unnecessary confusion.</p>
-              </div>
-            </div>
-            <div class="benefit">
-              <span class="check">✓</span>
-              <div>
-                <h3>Thoughtful dental guidance</h3>
-                <p>Discuss your needs with a qualified dental professional before deciding on treatment.</p>
-              </div>
-            </div>
+        <div class="about-copy">
+          <span class="eyebrow"><i class="fa-solid fa-heart"></i> Why choose us</span>
+          <h2>Dental care with a <span class="gradient-text">personal touch</span></h2>
+          <p>We believe a positive dental visit begins with listening. Our concept brings together clear communication, personalized treatment planning and a welcoming patient experience.</p>
+          <div class="feature-list">
+            <div class="feature"><i class="fa-solid fa-circle-check"></i><span><strong>Clear communication</strong><small>Understand your treatment options.</small></span></div>
+            <div class="feature"><i class="fa-solid fa-circle-check"></i><span><strong>Patient-focused</strong><small>Your needs guide the conversation.</small></span></div>
+            <div class="feature"><i class="fa-solid fa-circle-check"></i><span><strong>Modern environment</strong><small>A clean, welcoming clinic concept.</small></span></div>
+            <div class="feature"><i class="fa-solid fa-circle-check"></i><span><strong>Convenient enquiries</strong><small>Request a visit online.</small></span></div>
           </div>
-
-          <a class="btn btn-primary" style="margin-top:28px" href="#appointment">Let's Talk About Your Visit ↗</a>
+          <a href="#contact" class="btn btn-primary">Talk to Our Team <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </section>
 
-    <section class="content-section appointment" id="appointment">
-      <div class="container appointment-grid">
-        <div class="appointment-copy">
-          <div class="section-label">Get in touch</div>
-          <h2>Let's take the first step toward your <span style="color:#388477">smile.</span></h2>
-          <p>
-            Have a question about a dental service? Send an appointment
-            enquiry using the form. In this demo, the form opens WhatsApp
-            with your message so you can review it before sending.
-          </p>
-
-          <div class="contact-details">
-            <div class="contact-row">
-              <span class="trust-symbol">✉</span>
-              <span><strong>Appointment enquiries</strong><small>Send a message through WhatsApp</small></span>
-            </div>
-            <div class="contact-row">
-              <span class="trust-symbol">◷</span>
-              <span><strong>Clinic hours</strong><small>Confirm availability directly with the clinic</small></span>
-            </div>
-          </div>
+    <section class="section" id="doctors">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"><i class="fa-solid fa-user-doctor"></i> Meet the team</span>
+          <h2>Care guided by <span class="gradient-text">professionals</span></h2>
+          <p>Meet the people behind your care. Replace these sample profiles with the clinic's verified dentists, qualifications and photographs before using this website for a real business.</p>
         </div>
 
-        <form class="booking-card" id="bookingForm">
-          <h3>Request an appointment</h3>
-          <p>Share your details and preferred service to get started.</p>
-
-          <div class="form-grid">
-            <div class="field">
-              <label for="patientName">Your name</label>
-              <input id="patientName" name="name" autocomplete="name" placeholder="Enter your name" required>
+        <div class="doctors-grid">
+          <article class="doctor-card">
+            <div class="doctor-photo">
+              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=85" alt="Sample dentist profile portrait" loading="lazy">
             </div>
-
-            <div class="field">
-              <label for="patientPhone">Phone number</label>
-              <input id="patientPhone" name="phone" type="tel" autocomplete="tel" placeholder="Your phone number" required>
+            <div class="doctor-content">
+              <h3>Dr. [Doctor Name]</h3>
+              <div class="doctor-role">General Dentist · Sample Profile</div>
+              <p>Add the dentist's verified qualifications, experience and areas of practice here.</p>
+              <div class="doctor-tags"><span>General Dentistry</span><span>Preventive Care</span></div>
             </div>
-
-            <div class="field full">
-              <label for="serviceChoice">Service of interest</label>
-              <select id="serviceChoice" name="service" required>
-                <option value="">Select a service</option>
-                <option>General Dentistry</option>
-                <option>Teeth Whitening</option>
-                <option>Braces & Alignment</option>
-                <option>Root Canal Treatment</option>
-                <option>Dental Implants</option>
-                <option>Cosmetic Dentistry</option>
-                <option>Other / Not sure yet</option>
-              </select>
+          </article>
+          <article class="doctor-card">
+            <div class="doctor-photo">
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=85" alt="Sample dental professional profile portrait" loading="lazy">
             </div>
-
-            <div class="field full">
-              <label for="patientMessage">Message (optional)</label>
-              <textarea id="patientMessage" name="message" placeholder="How can we help? Please avoid sharing sensitive medical details here."></textarea>
+            <div class="doctor-content">
+              <h3>Dr. [Doctor Name]</h3>
+              <div class="doctor-role">Dental Professional · Sample Profile</div>
+              <p>Add a real team member's introduction and verified specialty information here.</p>
+              <div class="doctor-tags"><span>Patient Care</span><span>Consultation</span></div>
             </div>
-          </div>
+          </article>
+          <article class="doctor-card">
+            <div class="doctor-photo">
+              <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=85" alt="Sample healthcare professional profile portrait" loading="lazy">
+            </div>
+            <div class="doctor-content">
+              <h3>Dr. [Doctor Name]</h3>
+              <div class="doctor-role">Dental Professional · Sample Profile</div>
+              <p>Use this space for a real dentist's training, credentials and clinical interests.</p>
+              <div class="doctor-tags"><span>Dental Health</span><span>Treatment Planning</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-          <button class="btn btn-primary" type="submit">Continue to WhatsApp ↗</button>
-          <p class="form-note">Demo form: your details are not stored by this website. The message is prepared in WhatsApp for you to review.</p>
-          <p id="formStatus" class="form-note" role="status" aria-live="polite"></p>
-        </form>
+    <section class="section gallery" id="clinic">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"><i class="fa-solid fa-images"></i> Inside the clinic</span>
+          <h2>A welcoming space for <span style="color:#70dcf5">your smile</span></h2>
+          <p>Explore a visual concept for a clean, modern dental environment. Replace these illustrative photos with real pictures of the clinic.</p>
+        </div>
+        <div class="gallery-grid">
+          <article class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=85" alt="Modern clinic reception and treatment space" loading="lazy">
+            <div class="gallery-caption"><h3>Modern Clinic Interior</h3><p>A bright, welcoming environment</p></div>
+          </article>
+          <article class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=800&q=85" alt="Dental consultation room" loading="lazy">
+            <div class="gallery-caption"><h3>Patient Consultation</h3><p>Clear communication and care</p></div>
+          </article>
+          <article class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=85" alt="Dental instruments and equipment" loading="lazy">
+            <div class="gallery-caption"><h3>Dental Equipment</h3><p>Clinic equipment photo concept</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"><i class="fa-solid fa-comment-dots"></i> Patient experiences</span>
+          <h2>Kind words matter <span class="gradient-text">to us</span></h2>
+          <p>This section demonstrates how patient testimonials could look on the finished website.</p>
+          <p class="review-note"><i class="fa-solid fa-circle-info"></i> The examples below are placeholders, not real patient reviews. Replace them with genuine, permission-approved feedback.</p>
+        </div>
+
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="review-stars" aria-label="Example five-star display">★★★★★</div>
+            <blockquote>“[Insert a genuine patient comment about their visit and experience here.]”</blockquote>
+            <div class="review-person">
+              <div class="review-avatar">P</div>
+              <span><strong>[Patient Name]</strong><small>Example testimonial</small></span>
+            </div>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="Example five-star display">★★★★★</div>
+            <blockquote>“[Add verified feedback about the dentist's communication and care here.]”</blockquote>
+            <div class="review-person">
+              <div class="review-avatar">P</div>
+              <span><strong>[Patient Name]</strong><small>Example testimonial</small></span>
+            </div>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="Example five-star display">★★★★★</div>
+            <blockquote>“[Show a real patient's experience here, with their consent.]”</blockquote>
+            <div class="review-person">
+              <div class="review-avatar">P</div>
+              <span><strong>[Patient Name]</strong><small>Example testimonial</small></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section appointment" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"><i class="fa-regular fa-calendar-check"></i> Get in touch</span>
+          <h2>Let's plan your next <span class="gradient-text">dental visit</span></h2>
+          <p>Send an appointment enquiry. The form opens WhatsApp with your details so you can review and send the message.</p>
+        </div>
+
+        <div class="appointment-box">
+          <aside class="appointment-side">
+            <span class="eyebrow" style="background:#ffffff18;color:#a8ebff">Contact information</span>
+            <h2>We're here to help you smile.</h2>
+            <p>Have a question or need to request an appointment? Use the details confirmed by the actual clinic.</p>
+            <div class="contact-list">
+              <div class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <div><strong>Call us</strong><span>[Add verified clinic phone]</span></div>
+              </div>
+              <div class="contact-item">
+                <i class="fa-brands fa-whatsapp"></i>
+                <div><strong>WhatsApp enquiries</strong><span>Send an appointment request</span></div>
+              </div>
+              <div class="contact-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div><strong>Visit the clinic</strong><span>[Add full clinic address]</span></div>
+              </div>
+              <div class="contact-item">
+                <i class="fa-regular fa-clock"></i>
+                <div><strong>Opening hours</strong><span>[Add confirmed clinic timings]</span></div>
+              </div>
+            </div>
+          </aside>
+
+          <form class="appointment-form" id="appointmentForm">
+            <h3>Request an appointment</h3>
+            <p>Fill in your details and continue to WhatsApp to send your enquiry.</p>
+            <div class="form-grid">
+              <div class="field">
+                <label for="patientName">Your name *</label>
+                <input id="patientName" name="name" type="text" placeholder="Enter your name" required>
+              </div>
+              <div class="field">
+                <label for="patientPhone">Your phone *</label>
+                <input id="patientPhone" name="phone" type="tel" placeholder="Your contact number" required>
+              </div>
+              <div class="field">
+                <label for="treatment">Treatment of interest *</label>
+                <select id="treatment" name="treatment" required>
+                  <option value="">Select a treatment</option>
+                  <option>General Dentistry</option>
+                  <option>Teeth Whitening</option>
+                  <option>Braces & Alignment</option>
+                  <option>Root Canal Treatment</option>
+                  <option>Dental Implants</option>
+                  <option>Cosmetic Dentistry</option>
+                  <option>General Consultation</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="visitDate">Preferred date</label>
+                <input id="visitDate" name="date" type="date">
+              </div>
+              <div class="field full">
+                <label for="message">Additional information</label>
+                <textarea id="message" name="message" placeholder="Tell us briefly how we can help (optional)"></textarea>
+              </div>
+            </div>
+            <button class="btn btn-primary form-submit" type="submit">Continue to WhatsApp <i class="fa-brands fa-whatsapp"></i></button>
+            <p class="form-hint" id="formHint">Demo setup: add the clinic's WhatsApp number in the JavaScript before using this form.</p>
+          </form>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer>
     <div class="container">
       <div class="footer-grid">
-        <div>
-          <a class="brand" href="#home">
-            <span class="brand-icon" style="background:#fff;color:#123b40">☼</span>
-            <span>
-              <span class="brand-name">Smile Care</span>
-              <span class="brand-sub">Dental Clinic</span>
-            </span>
+        <div class="footer-about">
+          <a href="#home" class="brand">
+            <span class="brand-icon"><i class="fa-solid fa-tooth"></i></span>
+            <span><strong>Smile Care</strong><small>Dental Clinic</small></span>
           </a>
-          <p class="footer-description">
-            A welcoming dental website demo focused on clear information,
-            thoughtful design and a simpler appointment enquiry experience.
-          </p>
-        </div>
-
-        <div>
-          <h3>Explore</h3>
-          <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#services">Dental Services</a>
-            <a href="#about">Our Approach</a>
-            <a href="#appointment">Request an Appointment</a>
+          <p>A dental website concept focused on clear information, comfortable care and helping patients connect with the clinic.</p>
+          <div class="socials">
+            <a href="#contact" aria-label="Facebook placeholder"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#contact" aria-label="Instagram placeholder"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#contact" aria-label="WhatsApp contact"><i class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="#home">Home</a><a href="#about">About Us</a><a href="#doctors">Our Doctors</a><a href="#clinic">Clinic Gallery</a>
+        </div>
+        <div class="footer-col">
+          <h4>Our Treatments</h4>
+          <a href="#services">General Dentistry</a><a href="#services">Teeth Whitening</a><a href="#services">Braces & Alignment</a><a href="#services">Dental Implants</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p><i class="fa-solid fa-phone"></i> [Clinic phone]</p>
+          <p><i class="fa-solid fa-location-dot"></i> [Clinic address]</p>
+          <p><i class="fa-regular fa-clock"></i> [Opening hours]</p>
+          <a href="#contact">Request an appointment <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
       </div>
-
       <div class="footer-bottom">
-        <span>© <span id="year"></span> Smile Care Dental Clinic</span>
-        <span>Website concept for demonstration purposes.</span>
+        <span>© <span id="year"></span> Smile Care Dental Clinic. Website concept demo.</span>
+        <span>Designed with care <i class="fa-solid fa-heart" style="color:#63cafa"></i></span>
       </div>
     </div>
   </footer>
 
-  <!-- Replace the number in this link with the clinic's WhatsApp number -->
-  <a class="whatsapp-float" id="whatsappFloat"
-     href="#appointment" aria-label="Request an appointment">✆ WhatsApp Us</a>
+  <a class="whatsapp-float" href="#contact" id="whatsappFloat" aria-label="WhatsApp appointment enquiries">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
   <script>
-    // Mobile navigation
-    const menuToggle = document.getElementById("menuToggle");
+    /*
+      SETUP BEFORE PUBLISHING FOR A REAL CLINIC:
+      Replace the sample number below with the clinic's WhatsApp number.
+      Use country code and digits only, e.g. 923001234567.
+    */
+    const CLINIC_WHATSAPP = "923001234567"; // REPLACE THIS SAMPLE NUMBER
+
+    const navToggle = document.getElementById("navToggle");
     const navLinks = document.getElementById("navLinks");
 
-    menuToggle.addEventListener("click", () => {
+    navToggle.addEventListener("click", () => {
       const isOpen = navLinks.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.textContent = isOpen ? "×" : "☰";
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.innerHTML = isOpen
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
     });
 
     navLinks.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.textContent = "☰";
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
       });
     });
 
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    /*
-      DEMO SETUP:
-      Replace the placeholder with the clinic's WhatsApp number.
-      Use international format with digits only, e.g. 923001234567.
-      Do not use a real person's number without their permission.
-    */
-    const clinicWhatsAppNumber = "923001234567";
+    const form = document.getElementById("appointmentForm");
+    const hint = document.getElementById("formHint");
 
-    function isPlaceholderNumber(number) {
-      return !number || number === "923001234567" || !/^\d{10,15}$/.test(number);
-    }
-
-    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+    form.addEventListener("submit", function(event) {
       event.preventDefault();
 
-      const status = document.getElementById("formStatus");
+      if (!form.reportValidity()) return;
+
       const name = document.getElementById("patientName").value.trim();
       const phone = document.getElementById("patientPhone").value.trim();
-      const service = document.getElementById("serviceChoice").value;
-      const message = document.getElementById("patientMessage").value.trim();
+      const treatment = document.getElementById("treatment").value;
+      const date = document.getElementById("visitDate").value || "Flexible";
+      const message = document.getElementById("message").value.trim();
 
-      if (!name || !phone || !service) {
-        status.textContent = "Please complete your name, phone number and service.";
+      if (!/^\d{10,15}$/.test(CLINIC_WHATSAPP)) {
+        hint.textContent = "Please set the clinic's correct WhatsApp number in the JavaScript before testing the form.";
+        hint.style.color = "#c0392b";
         return;
       }
 
-      if (isPlaceholderNumber(clinicWhatsAppNumber)) {
-        status.textContent = "Demo setup: add the clinic's real WhatsApp number in the JavaScript before using this form.";
-        return;
-      }
+      const text =
+        "Hello Smile Care Dental Clinic,%0A%0A" +
+        "I would like to request an appointment.%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "Phone: " + encodeURIComponent(phone) + "%0A" +
+        "Treatment: " + encodeURIComponent(treatment) + "%0A" +
+        "Preferred date: " + encodeURIComponent(date) + "%0A" +
+        "Additional information: " + encodeURIComponent(message || "None");
 
-      const text = [
-        "Smile Care appointment enquiry",
-        "Name: " + name,
-        "Phone: " + phone,
-        "Service: " + service,
-        message ? "Message: " + message : ""
-      ].filter(Boolean).join("\n");
-
-      const url = "https://wa.me/" + clinicWhatsAppNumber + "?text=" + encodeURIComponent(text);
-      window.open(url, "_blank", "noopener,noreferrer");
-      status.textContent = "WhatsApp opened. Please review your message before sending.";
+      window.open("https://wa.me/" + CLINIC_WHATSAPP + "?text=" + text, "_blank", "noopener,noreferrer");
     });
 
-    // Floating WhatsApp button uses the same configured clinic number.
     document.getElementById("whatsappFloat").addEventListener("click", function(event) {
-      if (isPlaceholderNumber(clinicWhatsAppNumber)) {
+      if (!/^\d{10,15}$/.test(CLINIC_WHATSAPP)) {
         event.preventDefault();
-        document.getElementById("formStatus").textContent =
-          "Demo setup: add the clinic's real WhatsApp number in the JavaScript first.";
-        document.getElementById("appointment").scrollIntoView({ behavior: "smooth" });
-        return;
+        document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+        hint.textContent = "Add the clinic's verified WhatsApp number in the JavaScript to activate WhatsApp.";
+        hint.style.color = "#c0392b";
+      } else {
+        this.href = "https://wa.me/" + CLINIC_WHATSAPP;
       }
-
-      this.href = "https://wa.me/" + clinicWhatsAppNumber;
-      this.target = "_blank";
-      this.rel = "noopener noreferrer";
     });
   </script>
 </body>
